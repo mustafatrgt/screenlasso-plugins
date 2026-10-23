@@ -15,7 +15,7 @@ Prepare and convert images from a conversation, with the ScreenLasso app on your
 
 1. Install ScreenLasso from the Mac App Store and open it.
 2. In ScreenLasso › Settings › AI Agents, turn on **Let AI agents use ScreenLasso**.
-3. Install this plugin and paste the key shown in that settings tab when you're asked for it.
+3. Install this plugin and paste the key shown in that settings tab when you're asked for it. The address is already filled in with ScreenLasso's own, `http://127.0.0.1:47821/mcp`; change it only if Settings › AI Agents shows another.
 
 ## Use it
 
