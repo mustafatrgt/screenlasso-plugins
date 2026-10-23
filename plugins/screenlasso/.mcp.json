@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "screenlasso": {
+      "type": "http",
+      "url": "http://127.0.0.1:47821/mcp",
+      "headers": { "Authorization": "Bearer ${user_config.access_key}" }
+    }
+  }
+}

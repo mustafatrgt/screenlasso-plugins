@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "screenlasso",
+  "version": "1.0.0",
+  "description": "Prepare images for Instagram, X, LinkedIn, Pinterest, YouTube and the web, or convert them to WebP, AVIF, JPEG, PNG or HEIC, with the ScreenLasso app on your Mac.",
+  "author": { "name": "Mustafa Turgut" },
+  "repository": "https://github.com/mustafatrgt/screenlasso-plugins",
+  "license": "MIT",
+  "keywords": ["images", "webp", "avif", "instagram", "social-media", "mac"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "ScreenLasso",
+        "shortDescription": "Convert and optimize images on your Mac",
+        "developerName": "Mustafa Turgut",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "defaultPrompt": ["Use ScreenLasso to prepare ~/Pictures/photo.jpg for an Instagram portrait post."],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      }
+    }
+  }
+}

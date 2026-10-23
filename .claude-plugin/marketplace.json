@@ -1,0 +1,24 @@
+{
+  "name": "screenlasso",
+  "owner": {
+    "name": "Mustafa Turgut"
+  },
+  "metadata": {
+    "description": "ScreenLasso for Claude: convert and optimize images with the ScreenLasso app on your Mac."
+  },
+  "plugins": [
+    {
+      "name": "screenlasso",
+      "source": "./plugins/screenlasso",
+      "description": "Prepare images for Instagram, X, LinkedIn, Pinterest, YouTube and the web, or convert them to WebP, AVIF, JPEG, PNG or HEIC, with ScreenLasso on your Mac.",
+      "category": "productivity",
+      "tags": [
+        "images",
+        "webp",
+        "avif",
+        "social-media",
+        "mac"
+      ]
+    }
+  ]
+}

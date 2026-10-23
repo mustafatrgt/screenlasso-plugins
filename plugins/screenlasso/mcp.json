@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "screenlasso": {
+      "type": "streamable-http",
+      "url": "http://127.0.0.1:47821/mcp",
+      "extensions": {
+        "com.openai": { "auth": { "type": "api_key", "headerScheme": "bearer" } }
+      }
+    }
+  }
+}
