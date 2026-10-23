@@ -10,13 +10,15 @@
     {
       "name": "screenlasso",
       "source": "./plugins/screenlasso",
-      "description": "Prepare images for Instagram, X, LinkedIn, Pinterest, YouTube and the web, or convert them to WebP, AVIF, JPEG, PNG or HEIC, with ScreenLasso on your Mac.",
+      "description": "Edit, mark up and convert images, work with colors and QR codes, and convert videos with the ScreenLasso app on your Mac: social media sizes, WebP and AVIF, arrows and numbered steps, HEX/OKLCH/Tailwind and WCAG contrast. Images never leave your Mac.",
       "category": "productivity",
       "tags": [
         "images",
         "webp",
         "avif",
         "social-media",
+        "annotate",
+        "colors",
         "mac"
       ]
     }

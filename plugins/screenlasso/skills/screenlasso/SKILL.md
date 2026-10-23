@@ -1,18 +1,36 @@
 ---
 name: screenlasso
-description: Prepare, resize, crop or convert images with the ScreenLasso app on the user's Mac. Use when the user wants an image for Instagram, Stories, Reels, TikTok, Facebook, X, LinkedIn, Pinterest, a YouTube thumbnail or a link preview, wants WebP or AVIF for a website, or wants to convert an image to WebP, AVIF, JPEG, PNG or HEIC.
+description: Edit, mark up, resize, crop or convert images, work with colors and QR codes, and convert videos with the ScreenLasso app on the user's Mac. Use when the user wants an image for Instagram, Stories, Reels, TikTok, Facebook, X, LinkedIn, Pinterest, a YouTube thumbnail or a link preview; wants WebP or AVIF for a website; wants to resize, crop, watermark, add a logo or border, adjust colors, remove the background or hide faces and text; wants arrows, boxes, text or numbered steps drawn on a screenshot; wants a color converted (HEX, RGB, HSL, OKLCH, Tailwind, SwiftUI…), its contrast checked or a palette; wants a QR code read; wants a video or GIF converted; or wants a folder of images converted.
 ---
 
-ScreenLasso runs on the user's Mac and converts images with its `screenlasso` tools. Images stay on the Mac.
+ScreenLasso runs on the user's Mac. Its `screenlasso` tools work on files there, and images stay on the Mac.
 
-1. Call `list_presets` to see the presets and their exact sizes. Prefer a preset whenever the image is for a platform:
-   - Instagram feed: `instagram-portrait` (1080 × 1350). Use `instagram-grid` (1080 × 1440) only for posts made in the Instagram app.
-   - Stories, Reels and TikTok: `stories` (1080 × 1920).
-   - X, LinkedIn, Pinterest, YouTube thumbnails and link previews have their own presets; Facebook keeps the image's shape.
-   - A website: `web`, which makes several WebP sizes.
-2. For a platform, call `apply_preset` with the preset's id. Social presets crop to the platform's shape from the center, resize to its exact size and convert colors to sRGB, so the platform doesn't rescale the image before its own compression. Tell the user that part of the image is cropped when its shape differs.
-3. For anything else, call `convert_image` with a `format` and, if the user wants it smaller, `long_edge` in pixels.
-4. Pass the image as `path` when it's in the user's Pictures folder or a folder they allowed in ScreenLasso › Settings › AI Agents. Otherwise pass `image_base64` with a `file_name`. Without `output_folder`, a file given as a path is saved next to it.
-5. Reply with where the files were saved and their sizes, as the tool reports them.
+## Images
 
-If a tool says ScreenLasso isn't reachable or the key isn't accepted, ask the user to open ScreenLasso, turn on **Settings › AI Agents › Let AI agents use ScreenLasso**, and check the key.
+- **For a platform**, call `list_presets`, then `apply_preset`. Social presets crop to the platform's shape from the center, resize to its exact size and convert to sRGB, so the platform doesn't rescale before its own compression:
+  - Instagram feed: `instagram-portrait` (1080 × 1350); `instagram-grid` (1080 × 1440) only for posts made in the Instagram app.
+  - Stories, Reels and TikTok: `stories` (1080 × 1920). X, LinkedIn, Pinterest, YouTube thumbnails and link previews have their own; Facebook keeps the shape.
+  - A website: `web`, which makes several WebP sizes.
+  Tell the user when part of the image is cropped.
+- **Another format or size**: `convert_image` with `format` and, to make it smaller, `long_edge`.
+- **Edits**: `edit_image` with an `edits` list, applied in order — resize, crop, trim_borders, add_canvas, rotate, watermark, logo, border, round_corners, fill_transparency, auto_enhance, adjust, color_effect, sharpen, reduce_noise, blur, remove_background, hide_faces_text, srgb, metadata. Choose `format` (png by default).
+- **Marking up**: `annotate_image` with `marks` in image pixels from the top left — arrow, line, rectangle, highlight, text, number (numbered steps), pixelate, pen. Read the image first to place marks where they belong; keep text short and choose a color that stands out from the background.
+- **A whole folder**: `batch_convert` with a `preset` or a `format`; results go into an `Optimized` subfolder.
+
+Pass an image as `path` when it's in the Pictures folder or a folder allowed in ScreenLasso › Settings › AI Agents; otherwise as `image_base64` with a `file_name`. A file given as a path is saved next to it unless `output_folder` says otherwise. Files are never replaced.
+
+## Colors
+
+`convert_color` gives HEX, RGB, HSL, HSB, CMYK, OKLCH and the nearest Tailwind class (`all_formats` adds code for SwiftUI, NSColor, UIColor, Android, Java and .NET). `check_contrast` gives the WCAG ratio and, when it fails, the closest text colors that pass. `color_harmony` finds matching colors, `extract_palette` an image's main colors, and `save_palette` keeps colors in ScreenLasso's color picker.
+
+## QR codes and videos
+
+`read_qr` reads QR codes in an image, including Wi-Fi networks. `convert_video` turns a video or animated GIF/WebP into a web or sharing MP4, an archive copy, or a GIF or animated WebP.
+
+## The screen
+
+`capture_screen` and `pick_screen_color` ask the user to capture an area or pick a color, and work only when the user turned on **Allow screen capture** in ScreenLasso's settings. ScreenLasso asks the user every time; give a short `reason`. If the user declines, don't ask again unless they want to.
+
+## Answering
+
+Reply with where files were saved and their sizes, as the tools report them. If a tool says ScreenLasso isn't reachable or the key isn't accepted, ask the user to open ScreenLasso, turn on **Settings › AI Agents › Let AI agents use ScreenLasso**, and check the key.
