@@ -1,6 +1,6 @@
 ---
 name: screenlasso
-description: Edit, mark up, resize, crop or convert images, work with colors and QR codes, and convert videos with the ScreenLasso app on the user's Mac. Use when the user wants an image for Instagram, Stories, Reels, TikTok, Facebook, X, LinkedIn, Pinterest, a YouTube thumbnail or a link preview; wants WebP or AVIF for a website; wants to resize, crop, watermark, add a logo or border, adjust colors, remove the background or hide faces and text; wants arrows, boxes, text or numbered steps drawn on a screenshot; wants a color converted (HEX, RGB, HSL, OKLCH, Tailwind, SwiftUI…), its contrast checked or a palette; wants a QR code read; wants a video or GIF converted; or wants a folder of images converted.
+description: Edit, mark up, resize, crop or convert images, read text, work with colors and QR codes, and convert videos with the ScreenLasso app on the user's Mac. Use when the user wants an image for Instagram, Stories, Reels, TikTok, Facebook, X, LinkedIn, Pinterest, a YouTube thumbnail or a link preview; wants WebP or AVIF for a website; wants to resize, crop, watermark, add a logo or border, adjust colors, remove the background or hide faces and text; wants arrows, boxes, text or numbered steps drawn on a screenshot; wants a color converted (HEX, RGB, HSL, OKLCH, Tailwind, SwiftUI…), its contrast checked or a palette; wants the text in an image or on screen read (OCR); wants a QR code read; wants a video or GIF converted; or wants a folder of images converted.
 ---
 
 ScreenLasso runs on the user's Mac. Its `screenlasso` tools work on files there, and images stay on the Mac.
@@ -23,7 +23,9 @@ Pass an image as `path` when it's in the Pictures folder or a folder allowed in 
 
 `convert_color` gives HEX, RGB, HSL, HSB, CMYK, OKLCH and the nearest Tailwind class (`all_formats` adds code for SwiftUI, NSColor, UIColor, Android, Java and .NET). `check_contrast` gives the WCAG ratio and, when it fails, the closest text colors that pass. `color_harmony` finds matching colors, `extract_palette` an image's main colors, and `save_palette` keeps colors in ScreenLasso's color picker.
 
-## QR codes and videos
+## Text, QR codes and videos
+
+`read_text` reads the text in an image on the Mac (OCR), Turkish and English included, in reading order. Pass `include_lines` for each line with its position, and `languages` (e.g. `["tr", "en"]`) when the language is known. For text on the user's screen, ask with `capture_screen` first, then pass the image.
 
 `read_qr` reads QR codes in an image, including Wi-Fi networks. `convert_video` turns a video or animated GIF/WebP into a web or sharing MP4, an archive copy, or a GIF or animated WebP.
 

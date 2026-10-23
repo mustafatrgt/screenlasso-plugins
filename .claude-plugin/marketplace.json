@@ -10,7 +10,7 @@
     {
       "name": "screenlasso",
       "source": "./plugins/screenlasso",
-      "description": "Edit, mark up and convert images, work with colors and QR codes, and convert videos with the ScreenLasso app on your Mac: social media sizes, WebP and AVIF, arrows and numbered steps, HEX/OKLCH/Tailwind and WCAG contrast. Images never leave your Mac.",
+      "description": "Edit, mark up and convert images, read text, work with colors and QR codes, and convert videos with the ScreenLasso app on your Mac: social media sizes, WebP and AVIF, arrows and numbered steps, HEX/OKLCH/Tailwind and WCAG contrast. Images never leave your Mac.",
       "category": "productivity",
       "tags": [
         "images",

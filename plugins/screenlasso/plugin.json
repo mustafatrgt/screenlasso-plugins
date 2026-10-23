@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "screenlasso",
-  "version": "1.1.0",
-  "description": "Edit, mark up and convert images, work with colors and QR codes, and convert videos with the ScreenLasso app on your Mac: social media sizes, WebP and AVIF, arrows and numbered steps, HEX/OKLCH/Tailwind and WCAG contrast. Images never leave your Mac.",
+  "version": "1.2.0",
+  "description": "Edit, mark up and convert images, read text, work with colors and QR codes, and convert videos with the ScreenLasso app on your Mac: social media sizes, WebP and AVIF, arrows and numbered steps, HEX/OKLCH/Tailwind and WCAG contrast. Images never leave your Mac.",
   "author": {
     "name": "Mustafa Turgut"
   },
@@ -17,6 +17,7 @@
     "annotate",
     "colors",
     "qr",
+    "ocr",
     "mac"
   ],
   "extensions": {
