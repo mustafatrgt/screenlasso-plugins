@@ -31,7 +31,7 @@ Pass an image as `path` when it's in the Pictures folder or a folder allowed in 
 
 ## The screen
 
-`capture_screen` and `pick_screen_color` ask the user to capture an area or pick a color, and work only when the user turned on **Allow screen capture** in ScreenLasso's settings. ScreenLasso asks the user every time; give a short `reason`. If the user declines, don't ask again unless they want to.
+`capture_screen` asks the user to capture an area (`mode: area`, the default), the screen (`full_screen`), the window they click (`window`) or a long page they scroll (`scrolling`, joined into one tall image). `record_screen` asks them to record an area or the screen, without sound, until they stop or `max_seconds` (at most 120) pass, and returns the movie's path; `convert_video` makes it an MP4 or a GIF. `pick_screen_color` asks them to pick a color. These work only when the user turned on **Allow screen capture** in ScreenLasso's settings. ScreenLasso asks the user every time; give a short `reason`. If the user declines, don't ask again unless they want to.
 
 ## Answering
 
