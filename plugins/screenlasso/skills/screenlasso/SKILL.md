@@ -1,6 +1,6 @@
 ---
 name: screenlasso
-description: Edit, mark up, resize, crop or convert images, read text, work with colors and QR codes, and convert videos with the ScreenLasso app on the user's Mac. Use when the user wants an image for Instagram, Stories, Reels, TikTok, Facebook, X, LinkedIn, Pinterest, a YouTube thumbnail or a link preview; wants WebP or AVIF for a website; wants to resize, crop, watermark, add a logo or border, adjust colors, remove the background or hide faces and text; wants arrows, boxes, text or numbered steps drawn on a screenshot; wants a color converted (HEX, RGB, HSL, OKLCH, Tailwind, SwiftUI…), its contrast checked or a palette; wants the text in an image or on screen read (OCR); wants a QR code read; wants a video or GIF converted; or wants a folder of images converted.
+description: Edit, mark up, resize, crop or convert images, read text, work with colors and QR codes, and convert videos with the ScreenLasso app on the user's Mac. Use when the user wants an image for Instagram, Stories, Reels, TikTok, Facebook, X, LinkedIn, Pinterest, a YouTube thumbnail or a link preview; wants WebP or AVIF for a website; wants to resize, crop, watermark, add a logo or border, adjust colors, remove the background or hide faces and text; wants arrows, boxes, text or numbered steps drawn on a screenshot; wants a color converted (HEX, RGB, HSL, OKLCH, Tailwind, SwiftUI…), its contrast checked or a palette; wants the text in an image or on screen read (OCR); wants a QR code read or made (for a link, Wi-Fi network, contact, email, phone number or message); wants a video or GIF converted; or wants a folder of images converted.
 ---
 
 ScreenLasso runs on the user's Mac. Its `screenlasso` tools work on files there, and images stay on the Mac.
@@ -27,7 +27,7 @@ Pass an image as `path` when it's in the Pictures folder or a folder allowed in 
 
 `read_text` reads the text in an image on the Mac (OCR), Turkish and English included, in reading order. Pass `include_lines` for each line with its position, and `languages` (e.g. `["tr", "en"]`) when the language is known. For text on the user's screen, ask with `capture_screen` first, then pass the image.
 
-`read_qr` reads QR codes in an image, including Wi-Fi networks. `convert_video` turns a video or animated GIF/WebP into a web or sharing MP4, an archive copy, or a GIF or animated WebP.
+`read_qr` reads QR codes in an image, including Wi-Fi networks. `create_qr_code` makes one: `type` link or text (`text`), wifi (`ssid`, `password`, `security`, `hidden`), contact, email, phone or sms, styled with `foreground`/`background` colors, `transparent`, `modules` (square, rounded, dots), `corners` and a logo (`logo_path` or `logo_base64`). It returns a PNG, or SVG text; pass `output_folder` to save, which a PDF needs. It checks that the code scans and says so when it might not: keep dark on light and enough contrast. `convert_video` turns a video or animated GIF/WebP into a web or sharing MP4, an archive copy, or a GIF or animated WebP.
 
 ## The screen
 

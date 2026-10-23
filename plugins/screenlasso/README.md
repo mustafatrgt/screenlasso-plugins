@@ -8,7 +8,7 @@ Prepare and convert images from a conversation, with the ScreenLasso app on your
 - **Edits**: resize, crop, rotate, watermark, logo, border, rounded corners, color adjustments and effects, background removal, hiding faces and text, metadata.
 - **Mark-up**: arrows, boxes, text, numbered steps, highlights and pixelation on screenshots.
 - **Colors**: HEX, RGB, HSL, OKLCH, CMYK, Tailwind and code formats, WCAG contrast with fixes, harmonies, palettes from images.
-- **Text, QR codes, videos and folders**: read the text in an image (OCR), read QR codes, convert videos and GIFs, convert a whole folder.
+- **Text, QR codes, videos and folders**: read the text in an image (OCR), read and make QR codes, convert videos and GIFs, convert a whole folder.
 - **The screen, if you allow it**: Claude can ask you to capture an area, a window or a scrolling page, to record the screen without sound, or to pick a color. ScreenLasso asks you every time, and you choose what it gets.
 
 ## Set it up
