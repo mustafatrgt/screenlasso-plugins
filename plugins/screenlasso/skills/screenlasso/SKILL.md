@@ -14,7 +14,7 @@ ScreenLasso runs on the user's Mac. Its `screenlasso` tools work on files there,
   Tell the user when part of the image is cropped.
 - **Another format or size**: `convert_image` with `format` and, to make it smaller, `long_edge`.
 - **Edits**: `edit_image` with an `edits` list, applied in order — resize, crop, trim_borders, add_canvas, rotate, watermark, logo, border, round_corners, fill_transparency, auto_enhance, adjust, color_effect, sharpen, reduce_noise, blur, remove_background, hide_faces_text, srgb, metadata. Choose `format` (png by default).
-- **Marking up**: `annotate_image` with `marks` in image pixels from the top left — arrow, line, rectangle, highlight, text, number (numbered steps), pixelate, pen. Read the image first to place marks where they belong; keep text short and choose a color that stands out from the background.
+- **Marking up**: `annotate_image` with `marks` in image pixels from the top left — arrow, line, rectangle and ellipse (add `filled: true` for a solid shape), highlight, text, number (numbered steps), magnifier (a round lens showing what's under it twice as large), blur, pixelate (use it, not blur, for text that must not be read), pen. Read the image first to place marks where they belong; keep text short and choose a color that stands out from the background.
 - **A whole folder**: `batch_convert` with a `preset` or a `format`; results go into an `Optimized` subfolder.
 
 Pass an image as `path` when it's in the Pictures folder or a folder allowed in ScreenLasso › Settings › AI Agents; otherwise as `image_base64` with a `file_name`. A file given as a path is saved next to it unless `output_folder` says otherwise. Files are never replaced.
